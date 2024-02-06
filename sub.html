@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Example</title>
+    <!-- Add your CSS stylesheet link here -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar (You can reuse the navigation bar from the previous template) -->
+
+    <!-- New Post Section -->
+    <section id="newpost">
+        <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { ?>
+            <h1>Thanks For Submit</h1>
+        <?php } else { ?>
+            <h1>Create New Post</h1>
+
+            <!-- Post Form -->
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <label for="postTitle">Post Title:</label>
+                <input type="text" id="postTitle" name="postTitle" required>
+
+                <label for="postContent">Post Content:</label>
+                <textarea id="postContent" name="postContent" rows="5" required></textarea>
+
+                <button type="submit">Submit Post</button>
+            </form>
+        <?php } ?>
+
+        <!-- Back to Top Button (Optional) -->
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </section>
+
+    <!-- Footer Section -->
+
+    <!-- Add your JavaScript script tag here if needed -->
+
+</body>
+</html>
